@@ -734,27 +734,24 @@
   }, 4200);
 
   // ---- plate rig scroll progress (signature element) ----
-  const plates = document.querySelectorAll('#sleeve .plate');
-const pctLabel = document.getElementById('pct');
+ const pctLabel = document.getElementById("pct");
 
-function updateRig() {
-  const scrollTop = window.scrollY;
-  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-  const progress = docHeight > 0 ? Math.min(1, scrollTop / docHeight) : 0;
+function updateProgress() {
+  const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-  const litCount = Math.round(progress * plates.length);
+  const maxScroll =
+    document.documentElement.scrollHeight - window.innerHeight;
 
-  plates.forEach((p, i) => {
-    p.classList.toggle('on', i < litCount);
-  });
+  const percent = maxScroll > 0
+    ? Math.round((scrollTop / maxScroll) * 100)
+    : 100;
 
-  if (pctLabel) {
-    pctLabel.textContent = Math.round(progress * 100) + "%";
-  }
+  pctLabel.textContent = percent + "%";
 }
 
-window.addEventListener('scroll', updateRig, { passive: true });
-updateRig();
+window.addEventListener("scroll", updateProgress);
+window.addEventListener("resize", updateProgress);
+updateProgress();
 </script>
 </body>
 </html>
