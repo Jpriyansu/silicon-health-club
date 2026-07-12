@@ -740,7 +740,7 @@
     const scrollTop = window.scrollY;
     const docHeight = document.documentElement.scrollHeight - window.innerHeight;
     const progress = docHeight > 0 ? Math.min(1, scrollTop / docHeight) : 0;
-    const litCount = Math.round(progress * plates.length);
+    const litCount = Math.floor(progress * plates.length);
    plates.forEach((p, i) => {
   p.classList.toggle("on", i < litCount);
 });
