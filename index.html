@@ -742,7 +742,7 @@
     const progress = docHeight > 0 ? Math.min(1, scrollTop / docHeight) : 0;
     const litCount = Math.round(progress * plates.length);
     plates.forEach((p, i) => p.classList.toggle('on', i < litCount));
-    pctLabel.textContent = Math.round(progress * 100) + '%';
+    pctLabel.textContent = Math.round(progress * 100) ;
   }
   window.addEventListener('scroll', updateRig, {passive:true});
   updateRig();
