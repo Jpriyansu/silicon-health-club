@@ -748,7 +748,7 @@ const litCount = Math.min(
     plates.forEach((p, i) => {
   p.classList.toggle("on", i < litCount);
 });
-    pctLabel.textContent = Math.round(progress * 100) ;
+    pctLabel.textContent = Math.round(progress * 100) + "%";
   }
   window.addEventListener('scroll', updateRig, {passive:true});
   updateRig();
