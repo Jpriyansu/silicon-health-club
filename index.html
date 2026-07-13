@@ -385,10 +385,56 @@ header.scrolled .logo{
   /* ---------- REGISTER + RULEBOOK ---------- */
   .split-cards{display:grid;grid-template-columns:1.3fr 1fr;gap:26px;}
   @media(max-width:860px){.split-cards{grid-template-columns:1fr;}}
+  /*new code added*/
   .card{
-    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
-    padding:44px;position:relative;overflow:hidden;
-  }
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:44px;
+    position:relative;
+    overflow:hidden;
+    transition:all .4s ease;
+}
+
+
+/* top red line */
+.card::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:0;
+    height:4px;
+    background:var(--red);
+    transition:.4s ease;
+}
+
+
+.card:hover::before{
+    width:100%;
+}
+
+
+.card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 20px 40px rgba(0,0,0,.12);
+}
+  /* end here*/
+/*new code for step num*/
+.step .snum{
+    transition:.35s ease;
+}
+
+
+.step:hover .snum{
+    background:var(--red);
+    transform:scale(1.15);
+    box-shadow:0 0 15px rgba(214,64,44,.5);
+}
+
+/* end here*/
+
+  
   .card-register{display:flex;flex-direction:column;gap:22px;}
   .steps{display:flex;flex-direction:column;gap:14px;margin:8px 0 6px;}
   .step{display:flex;gap:14px;align-items:flex-start;}
@@ -414,8 +460,26 @@ header.scrolled .logo{
   .rb-link .rb-icon{width:30px;height:30px;color:var(--red);flex-shrink:0;}
   .rb-link .rb-name{font-family:'Space Mono',monospace;font-size:0.82rem;}
   .rb-link .rb-arrow{width:20px;height:20px;color:var(--bg);transition:transform .2s ease;}
-  .rb-link:hover .rb-arrow{transform:translateX(4px);}
 
+/* new code added*/
+.rb-link:hover .rb-arrow{
+    transform:translateX(8px);
+}
+
+
+.rb-link{
+    transition:.35s ease;
+}
+
+
+.rb-link:hover{
+    transform:scale(1.03);
+}
+
+/* end here*/
+
+
+  
   /* ---------- CORE TEAM ---------- */
   .team-grid{
     display:grid;grid-template-columns:repeat(4,1fr);gap:28px 24px;
