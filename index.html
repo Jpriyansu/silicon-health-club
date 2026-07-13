@@ -306,6 +306,64 @@
   .member h3{font-size:1.02rem;text-transform:none;font-family:'Work Sans',sans-serif;font-weight:700;letter-spacing:0;}
   .member .role{color:var(--red-deep);}
 
+.member{
+position:relative;
+overflow:hidden;
+transition:.4s ease;
+}
+
+.member:hover{
+transform:translateY(-10px);
+}
+
+.photo-slot{
+position:relative;
+overflow:hidden;
+transition:.5s;
+}
+
+.photo-slot::after{
+content:"";
+position:absolute;
+inset:0;
+background:linear-gradient(
+to top,
+rgba(0,0,0,.8),
+transparent 60%
+);
+
+opacity:0;
+transition:.4s;
+}
+
+.member:hover .photo-slot{
+transform:scale(1.05);
+}
+
+.member:hover .photo-slot::after{
+opacity:1;
+}
+
+.member h3{
+transition:.35s;
+}
+
+.member .role{
+opacity:0;
+transform:translateY(20px);
+transition:.35s;
+}
+
+.member:hover h3{
+color:var(--red);
+}
+
+.member:hover .role{
+opacity:1;
+transform:translateY(0);
+}
+  
+
   /* ---------- EVENT ---------- */
   .event{
     background:var(--ink);color:var(--bg);position:relative;overflow:hidden;
