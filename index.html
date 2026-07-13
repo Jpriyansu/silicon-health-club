@@ -715,6 +715,99 @@ transform:translateY(0);
 
   /* ---------- FOOTER ---------- */
   footer{padding:60px 0 34px;border-top:1px solid var(--line);}
+
+/* Footer Premium Effects */
+
+footer{
+    position:relative;
+    overflow:hidden;
+}
+
+
+/* Logo hover */
+.foot-brand .logo{
+    transition:.35s ease;
+}
+
+
+.foot-brand .logo:hover{
+    transform:translateY(-5px);
+}
+
+
+.foot-brand .mark{
+    transition:.35s ease;
+}
+
+
+.foot-brand .logo:hover .mark{
+    background:var(--red);
+    transform:rotate(360deg);
+}
+
+
+/* new code for Footer links animation */
+
+.foot-col a{
+    position:relative;
+    transition:.3s ease;
+}
+
+
+.foot-col a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-3px;
+    width:0;
+    height:2px;
+    background:var(--red);
+    transition:.3s ease;
+}
+
+
+.foot-col a:hover::after{
+    width:100%;
+}
+
+
+.foot-col a:hover{
+    color:var(--ink);
+    transform:translateX(6px);
+}
+
+
+/* Footer brand text */
+
+.foot-brand p{
+    transition:.35s ease;
+}
+
+
+.foot-brand:hover p{
+    color:var(--ink);
+}
+
+
+/* Bottom fade */
+
+.foot-bottom{
+    transition:.4s ease;
+}
+
+
+.foot-bottom:hover{
+    color:var(--steel);
+}
+
+
+
+
+
+
+
+
+  
   .foot-grid{display:flex;justify-content:space-between;flex-wrap:wrap;gap:30px;margin-bottom:40px;}
   .foot-brand .logo{margin-bottom:14px;}
   .foot-brand p{color:var(--steel);max-width:280px;font-size:0.92rem;}
@@ -739,6 +832,27 @@ transform:translateY(0);
     .hero-grid{grid-template-columns:1fr;}
     .hero-art{height:300px;order:-1;}
   }
+  /*new code for premium scroll bar*/
+
+  ::-webkit-scrollbar{
+    width:10px;
+}
+
+
+::-webkit-scrollbar-track{
+    background:var(--bg-soft);
+}
+
+
+::-webkit-scrollbar-thumb{
+    background:var(--red);
+    border-radius:20px;
+}
+
+
+::-webkit-scrollbar-thumb:hover{
+    background:var(--red-deep);
+}
 </style>
 </head>
 <body>
