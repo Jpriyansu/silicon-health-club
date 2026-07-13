@@ -486,8 +486,36 @@ header.scrolled .logo{
   }
   @media(max-width:920px){.team-grid{grid-template-columns:repeat(3,1fr);}}
   @media(max-width:640px){.team-grid{grid-template-columns:repeat(2,1fr);}}
-  .member{display:flex;flex-direction:column;gap:14px;}
-  .photo-slot{
+/*new code added*/
+  .member{
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+    position:relative;
+    padding:12px;
+    border:1px solid transparent;
+    transition:.4s ease;
+}
+
+
+.member:hover{
+    transform:translateY(-12px);
+    border-color:var(--red);
+    background:var(--card);
+    box-shadow:0 20px 40px rgba(0,0,0,.12);
+}
+  
+  /*end here...*/
+  
+  /*again new code added*/
+    .photo-slot{
+    transition:.5s ease;
+}
+
+
+.member:hover .photo-slot{
+    transform:scale(1.04);
+}
     aspect-ratio:4/5;width:100%;
     background:var(--bg-soft);
     border:1.5px dashed var(--steel-soft);
@@ -498,17 +526,34 @@ header.scrolled .logo{
   .photo-slot svg{width:34px;height:34px;}
   .photo-slot span{font-family:'Space Mono',monospace;font-size:0.62rem;letter-spacing:0.08em;text-align:center;padding:0 10px;}
   .member h3{font-size:1.02rem;text-transform:none;font-family:'Work Sans',sans-serif;font-weight:700;letter-spacing:0;}
-  .member .role{color:var(--red-deep);}
+/*new code added*/
+.member .role{
+    display:inline-block;
+    width:max-content;
+    color:#fff;
+    background:var(--red);
+    padding:5px 12px;
+    border-radius:20px;
+    font-size:.65rem;
+    opacity:0;
+    transform:translateY(15px);
+    transition:.35s ease;
+}
 
+
+.member:hover .role{
+    opacity:1;
+    transform:translateY(0);
+}
+
+
+  
 .member{
 position:relative;
 overflow:hidden;
 transition:.4s ease;
 }
 
-.member:hover{
-transform:translateY(-10px);
-}
 
 .photo-slot{
 position:relative;
