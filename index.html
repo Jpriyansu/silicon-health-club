@@ -128,10 +128,10 @@
     padding:10px 0;border-bottom:1px solid var(--line);width:100%;
   }
 /*added new code*/
-  header.scrolled{
-    background:rgba(241,240,234,.97);
-    backdrop-filter:blur(18px);
-    box-shadow:0 8px 25px rgba(0,0,0,.08);
+    header.scrolled{
+    background:rgba(241,240,234,.82);
+    backdrop-filter:blur(25px) saturate(140%);
+    box-shadow:0 12px 35px rgba(0,0,0,.12);
 }
 
 header.scrolled .nav{
@@ -330,8 +330,37 @@ header.scrolled .logo{
     background:var(--card);padding:34px 28px;
     display:flex;flex-direction:column;gap:18px;
     transition:background .25s ease;
+    /*added new code*/
+    position:relative;
+    overflow:hidden;
+    border:1px solid transparent;
+    transition:all .4s ease;
+}
   }
-  .fac-item:hover{background:var(--bg-soft);}
+  /*new code added*/
+  .fac-item:hover{
+ transform:translateY(-12px);
+    background:var(--bg-soft);
+    border-color:var(--red);
+    box-shadow:0 18px 35px rgba(0,0,0,.12);
+}
+
+/* Arrow create */
+.fac-item::after{
+    content:"→";
+    position:absolute;
+    right:25px;
+    bottom:25px;
+    font-size:1.5rem;
+    color:var(--red);
+    opacity:0;
+    transform:translateX(-10px);
+    transition:.35s ease;
+}
+
+  /*....end here....*/
+ 
+
   .fac-item .ficon{width:44px;height:44px;color:var(--red);}
   .fac-item h3{font-size:1.15rem;letter-spacing:0.01em;}
   .fac-item .fac-idx{font-family:'Space Mono',monospace;font-size:0.7rem;color:var(--steel-soft);}
